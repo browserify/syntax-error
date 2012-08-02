@@ -2,6 +2,8 @@
 
 Detect and report syntax errors in source code strings.
 
+[![build status](https://secure.travis-ci.org/substack/node-syntax-error.png)](http://travis-ci.org/substack/node-syntax-error)
+
 When you type `node src.js` you get a friendly error report about exactly where
 the syntax error is. This module lets you check for syntax errors and report
 them in a similarly friendly format that wrapping a try/catch around
