@@ -50,10 +50,5 @@ ParseError.prototype.toString = function () {
 };
 
 ParseError.prototype.inspect = function () {
-    return '[ParseError: '
-        + this.message
-        + ', '
-        + '(line ' + this.line + ', column ' + this.column + ')'
-        + ']'
-    ;
+    return this.annotated;
 };
