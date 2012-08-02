@@ -1,6 +1,6 @@
 # syntax-error
 
-Check for and report syntax errors in source code strings.
+Detect and report syntax errors in source code strings.
 
 When you type `node src.js` you get a friendly error report about exactly where
 the syntax error is. This module lets you check for syntax errors and report
