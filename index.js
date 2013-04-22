@@ -43,7 +43,7 @@ function ParseError (err, src, file) {
     ;
 }
 
-ParseError.prototype = new SyntaxError;
+ParseError.prototype = Object.create(SyntaxError.prototype);
 
 ParseError.prototype.toString = function () {
     return this.annotated;
