@@ -1,8 +1,8 @@
-var esprima = require('esprima');
+var esprima = require('esprima-fb');
 
 module.exports = function (src, file) {
     if (typeof src !== 'string') src = String(src);
-    
+
     try {
         Function(src);
         return;
@@ -25,12 +25,12 @@ function errorInfo (src, file) {
 
 function ParseError (err, src, file) {
     SyntaxError.call(this);
-    
+
     this.message = err.message.replace(/^Line \d+: /, '');
-    
+
     this.line = err.lineNumber;
     this.column = err.column;
-    
+
     this.annotated = '\n'
         + (file || '(anonymous file)')
         + ':' + this.line
