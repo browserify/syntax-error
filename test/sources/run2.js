@@ -1,1 +1,3 @@
-}); process.exit(1); (function () {
+})();
+process.exit(1);
+(function () {
