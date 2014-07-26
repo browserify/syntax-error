@@ -5,7 +5,7 @@ var check = require('../');
 
 var src = '<html></html>';
 
-test(function (t) {
+test('html', function (t) {
     var err = check(src, 'foo.js');
     t.ok(err);
     t.equal(err.line, 1);

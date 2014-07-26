@@ -6,7 +6,7 @@ var check = require('../');
 var file = __dirname + '/sources/check.js';
 var src = fs.readFileSync(file);
 
-test(function (t) {
+test('check', function (t) {
     var err = check(src, file);
     t.ok(err);
     t.equal(err.line, 5);
