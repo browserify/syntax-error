@@ -10,7 +10,7 @@ test('html', function (t) {
     t.ok(err);
     t.equal(err.line, 1);
     t.equal(err.column, 1);
-    t.equal(err.message, 'Unexpected token <');
+    t.equal(err.message, 'Unexpected token');
     t.ok(/foo.js:1/.test(err), 'foo.js:1');
     t.end();
 });
