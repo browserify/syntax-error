@@ -2,19 +2,7 @@ var esprima = require('esprima-fb');
 
 module.exports = function (src, file) {
     if (typeof src !== 'string') src = String(src);
-    
-    try {
-        eval('throw "STOP"; (function () { ' + src + '})()');
-        return;
-    }
-    catch (err) {
-        if (err === 'STOP') return undefined;
-        if (err.constructor.name !== 'SyntaxError') throw err;
-        return errorInfo(src, file);
-    }
-};
 
-function errorInfo (src, file) {
     try {
         esprima.parse(src);
         return;
@@ -22,16 +10,16 @@ function errorInfo (src, file) {
     catch (err) {
         return new ParseError(err, src, file);
     }
-}
+};
 
 function ParseError (err, src, file) {
     SyntaxError.call(this);
-    
+
     this.message = err.message.replace(/^Line \d+: /, '');
-    
+
     this.line = err.lineNumber;
     this.column = err.column;
-    
+
     this.annotated = '\n'
         + (file || '(anonymous file)')
         + ':' + this.line
