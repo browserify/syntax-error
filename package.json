@@ -4,7 +4,7 @@
   "description": "detect and report syntax errors in source code strings",
   "main": "index.js",
   "dependencies": {
-    "esprima-fb": "3001.1.0-dev-harmony-fb"
+    "esprima-fb": "6001.1001.0000-dev-harmony-fb"
   },
   "devDependencies": {
     "tape": "~2.4.1"
