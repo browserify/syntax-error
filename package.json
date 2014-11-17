@@ -1,6 +1,6 @@
 {
   "name": "syntax-error",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "detect and report syntax errors in source code strings",
   "main": "index.js",
   "dependencies": {
