@@ -4,7 +4,7 @@
   "description": "detect and report syntax errors in source code strings",
   "main": "index.js",
   "dependencies": {
-    "acorn": "~0.9.0"
+    "acorn": "^1.0.3"
   },
   "devDependencies": {
     "tape": "~2.4.1"
