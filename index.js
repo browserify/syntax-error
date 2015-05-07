@@ -1,7 +1,13 @@
 var aparse = require('acorn').parse;
 function parse (src) { return aparse(src, { ecmaVersion: 6 }) }
 
+var shasum = require('shasum');
+var valid = {};
+
 module.exports = function (src, file) {
+    var h = shasum(src);
+    if (typeof valid[h] !== 'undefined') return;
+    
     if (typeof src !== 'string') src = String(src);
     
     try {
@@ -9,7 +15,10 @@ module.exports = function (src, file) {
         return;
     }
     catch (err) {
-        if (err === 'STOP') return undefined;
+        if (err === 'STOP') {
+            valid[h] = true;
+            return;
+        }
         if (err.constructor.name !== 'SyntaxError') throw err;
         return errorInfo(src, file);
     }
