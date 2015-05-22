@@ -7,10 +7,10 @@
     "acorn": "^1.0.3"
   },
   "devDependencies": {
-    "tape": "~2.4.1"
+    "tap": "^1.1.0"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tap test/*.js"
   },
   "repository": {
     "type": "git",
