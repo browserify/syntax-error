@@ -11,6 +11,8 @@ test('html', function (t) {
     t.equal(err.line, 1);
     t.equal(err.column, 1);
     t.equal(err.message, 'Unexpected token');
+    // node 0.12 and iojs don't include the stack trace
+    t.match(err.stack, __filename, {skip: err.stack == null});
     t.ok(/foo.js:1/.test(err), 'foo.js:1');
     t.end();
 });
