@@ -12,6 +12,8 @@ test('check', function (t) {
     t.equal(err.line, 5);
     t.equal(err.column, 30);
     t.equal(err.message, 'Unexpected token');
+    // node 0.12 and iojs don't include the stack trace
+    t.match(err.stack, __filename, {skip: err.stack == null});
     t.ok(String(err).indexOf(file + ':5'));
     t.end();
 });

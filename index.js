@@ -11,21 +11,22 @@ module.exports = function (src, file) {
     catch (err) {
         if (err === 'STOP') return undefined;
         if (err.constructor.name !== 'SyntaxError') throw err;
-        return errorInfo(src, file);
+        return errorInfo(src, file, err.stack);
     }
 };
 
-function errorInfo (src, file) {
+function errorInfo (src, file, stack) {
     try { parse(src) }
     catch (err) {
-        return new ParseError(err, src, file);
+        return new ParseError(err, src, file, stack);
     }
     return undefined;
 }
 
-function ParseError (err, src, file) {
+function ParseError (err, src, file, stack) {
     SyntaxError.call(this);
     
+    this.stack = stack;
     this.message = err.message.replace(/\s+\(\d+:\d+\)$/, '');
     
     this.line = err.loc.line;
