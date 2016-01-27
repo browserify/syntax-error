@@ -1,5 +1,10 @@
 var aparse = require('acorn').parse;
-function parse (src) { return aparse(src, { ecmaVersion: 6 }) }
+function parse (src) {
+    return aparse(src, {
+        ecmaVersion: 6,
+        allowHashBang: true
+    });
+}
 
 module.exports = function (src, file) {
     if (typeof src !== 'string') src = String(src);
