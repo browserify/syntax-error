@@ -58,6 +58,7 @@ If there are no syntax errors in `src`, return `undefined`.
 Optionally set:
 
 * `opts.ecmaVersion` - default: 8
+* `opts.sourceType` - default: 'script'
 
 ## err.toString()
 
