@@ -2,6 +2,7 @@ var aparse = require('acorn').parse;
 function parse (src, opts) {
     if (!opts) opts = {}
     return aparse(src, {
+        sourceType: opts.sourceType || 'string',
         ecmaVersion: opts.ecmaVersion || 8,
         allowHashBang: true
     });
