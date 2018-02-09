@@ -11,7 +11,7 @@ module.exports = function (src, file,opts) {
     if (typeof src !== 'string') src = String(src);
     
     try {
-        eval('throw "STOP"; (function () { ' + src + '})()');
+        eval('throw "STOP"; (function () { ' + src + '\n})()');
         return;
     }
     catch (err) {
