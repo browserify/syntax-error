@@ -1,10 +1,7 @@
-var aparse = require('acorn').parse;
+var aparse = require('acorn-node').parse;
 function parse (src, opts) {
     if (!opts) opts = {}
-    return aparse(src, {
-        ecmaVersion: opts.ecmaVersion || 8,
-        allowHashBang: true
-    });
+    return aparse(src, opts);
 }
 
 module.exports = function (src, file,opts) {
