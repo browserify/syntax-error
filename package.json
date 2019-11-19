@@ -7,7 +7,7 @@
     "acorn-node": "^1.2.0"
   },
   "devDependencies": {
-    "tap": "^1.1.0"
+    "tap": "^10.7.3"
   },
   "scripts": {
     "test": "tap test/*.js"
